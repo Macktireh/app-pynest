@@ -1,4 +1,4 @@
-# Blog App with PyNest
+# Blog Application with PyNest
 
 This is a template for a PyNest service.
 
