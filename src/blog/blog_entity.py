@@ -2,12 +2,12 @@ from datetime import datetime
 
 from sqlalchemy import Boolean, Column, DateTime, Integer, String, Text
 
-from config import config
-
-
-class BlogEntity(config.Base):
+from src.config import config
+    
+    
+class Blog(config.Base):
     __tablename__ = "blog"
-
+    
     id = Column(Integer, primary_key=True, autoincrement=True)
     title = Column(String, unique=True)
     content = Column(Text, nullable=False)

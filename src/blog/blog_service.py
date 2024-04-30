@@ -1,11 +1,12 @@
-from .blog_model import BlogIn, BlogOut
-from .blog_entity import BlogEntity
-from config import config
-from nest.core.decorators import db_request_handler
-from functools import lru_cache
+from nest.core import Injectable
+from nest.core.decorators.database import db_request_handler
+
+from src.blog.blog_entity import Blog as BlogEntity
+from src.blog.blog_model import BlogIn, BlogOut
+from src.config import config
 
 
-@lru_cache()
+@Injectable
 class BlogService:
 
     def __init__(self):
@@ -42,4 +43,3 @@ class BlogService:
     def delete_blog_by_id(self, id):
         self.session.query(BlogEntity).filter(BlogEntity.id == id).delete()
         self.session.commit()
-
