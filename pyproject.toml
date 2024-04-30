@@ -1,0 +1,21 @@
+[project]
+name = "blog-with-pynest"
+version = "0.1.0"
+description = "Creating a simple blog management application with PyNest"
+authors = [
+    {name = "Macktireh", email = "abdimack97@gmail.com"},
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = "==3.12.*"
+dependencies = [
+    "pynest-api==0.2.2",
+]
+
+
+[tool.pdm]
+distribution = false
+
+
+[tool.pdm.scripts]
+start = "python main.py"
